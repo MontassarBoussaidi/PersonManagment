@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  db:
+    image: 'postgres:15'
+    restart: always
+    environment:
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=pepole_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - db_data:/var/lib/postegresql/data
+volumes:
+  db_data:
